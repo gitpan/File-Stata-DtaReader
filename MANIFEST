@@ -1,0 +1,7 @@
+Changes
+MANIFEST
+Makefile.PL
+README
+bin/dta2csv
+lib/File/Stata/DtaReader.pm
+META.yml                                Module meta-data (added by MakeMaker)

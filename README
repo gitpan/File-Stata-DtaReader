@@ -1,0 +1,5 @@
+File::Stata::DtaReader is a module to read .dta files
+from the statistical software package Stata, versions 8 and 10.
+
+The module comes with a command-line utility dta2csv to convert
+.dta files into comma separated values.  Bulk conversion is supported.

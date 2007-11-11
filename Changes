@@ -1,0 +1,15 @@
+=head1 NAME
+
+HISTORY - public release history for File::Stata::DtaReader
+
+=head1 DESCRIPTION
+
+=over 8
+
+=item 0.092: 11 November 2007
+
+First public release.
+
+=back
+
+=cut
