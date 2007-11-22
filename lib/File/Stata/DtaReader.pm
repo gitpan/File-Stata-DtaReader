@@ -24,7 +24,9 @@ File::Stata::DtaReader - read Stata 8 and Stata 10 .dta files
 
 =head1 BUGS
 
-This is quick and dirty first version (November 2007).
+This is quick and dirty early version (November 2007).  Not much testing done.
+
+The bug in version 0.092 relating to handling of 0 float/double values was fixed in version 0.2.
 
 All types of Stata missing values (determined somewhat
 approximately in the case of float and double) are rendered
@@ -44,7 +46,7 @@ You may use or redistribute this module under the same terms as perl itself
 
 BEGIN {
 
-    $File::Stata::DtaReader::VERSION = '0.092';
+    $File::Stata::DtaReader::VERSION = '0.2';
 
     # test for float endianness using little-endian 33 33 3b f3, which is a float code for 1.4
     my $testFloat = unpack( 'f', pack( 'h*', 'f33b3333' ) );
@@ -165,10 +167,10 @@ sub readRow($) {
         my $t = $self->{typlist}->[$i];
         if ( $self->{byteorder} != $File::Stata::DtaReader::byteOrder ) {
             if ( $t == 254 ) {
-                $a[$i] = unpack( 'f', pack( 'C*', reverse( unpack( 'CCCC', $a[$i] ) ) ) );
+                $a[$i] = unpack( 'f', pack( 'N', ( unpack( 'V', $a[$i] ) ) ) );
             }
             elsif ( $t == 255 ) {
-                $a[$i] = unpack( 'd', pack( 'C*', reverse( unpack( 'CCCCCCCC', $a[$i] ) ) ) );
+                $a[$i] = unpack( 'd', pack( 'NN', reverse( unpack( 'VV', $a[$i] ) ) ) );
             }
         }
         if ( defined $a[$i] ) {
