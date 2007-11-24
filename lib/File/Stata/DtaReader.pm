@@ -24,10 +24,6 @@ File::Stata::DtaReader - read Stata 8 and Stata 10 .dta files
 
 =head1 BUGS
 
-This is quick and dirty early version (November 2007).  Not much testing done.
-
-The bug in version 0.092 relating to handling of 0 float/double values was fixed in version 0.2.
-
 All types of Stata missing values (determined somewhat
 approximately in the case of float and double) are rendered
 as a perl undef.
@@ -35,18 +31,18 @@ as a perl undef.
 =head1 AUTHOR
 
 Written by Franck Latremoliere. Copyright (c) 2007 Reckon LLP.
-See http://www.reckon.co.uk/staff/franck/ for more information.
+http://www.reckon.co.uk/staff/franck/
 
 =head1 LICENCE
 
-You may use or redistribute this module under the same terms as perl itself
+This program is free software; you can use, redistribute and/or modify it under the same terms as Perl itself
 (Artistic Licence or GNU GPL).
 
 =cut
 
 BEGIN {
 
-    $File::Stata::DtaReader::VERSION = '0.2';
+    $File::Stata::DtaReader::VERSION = '0.3';
 
     # test for float endianness using little-endian 33 33 3b f3, which is a float code for 1.4
     my $testFloat = unpack( 'f', pack( 'h*', 'f33b3333' ) );

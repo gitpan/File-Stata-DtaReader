@@ -1,15 +1,34 @@
 =head1 NAME
 
-HISTORY - public release history for File::Stata::DtaReader
+File::Stata::DtaReader - CPAN release history
 
-=head1 DESCRIPTION
+=head1 RELEASE HISTORY
 
 =over 8
 
-=item 0.092: 11 November 2007
+= item 0.3 (24 November 2007)
 
-First public release.
+Improved distribution and minor tidy-up.
+
+= item 0.2 (22 November 2007)
+
+Fixed bug relating to handling of zero float/double values when the dta file
+has a different endianness as the local platform.
+
+=item 0.092 (11 November 2007)
+
+First public release.  Not much testing done.
 
 =back
+
+=head1 AUTHOR
+
+Written by Franck Latremoliere. Copyright (c) 2007 Reckon LLP.
+http://www.reckon.co.uk/staff/franck/
+
+=head1 LICENCE
+
+This program is free software; you can use, redistribute and/or modify it under the same terms as Perl itself
+(Artistic Licence or GNU GPL).
 
 =cut
