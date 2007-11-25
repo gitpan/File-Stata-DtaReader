@@ -6,11 +6,15 @@ File::Stata::DtaReader - CPAN release history
 
 =over 8
 
-= item 0.3 (24 November 2007)
+=item 0.31 (25 November 2007)
+
+Fix installation bug (remove Mac OS X resource forks from tar by export COPY_EXTENDED_ATTRIBUTES_DISABLE=1).
+
+=item 0.3 (24 November 2007)
 
 Improved distribution and minor tidy-up.
 
-= item 0.2 (22 November 2007)
+=item 0.2 (22 November 2007)
 
 Fixed bug relating to handling of zero float/double values when the dta file
 has a different endianness as the local platform.

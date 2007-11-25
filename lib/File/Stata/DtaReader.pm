@@ -42,7 +42,7 @@ This program is free software; you can use, redistribute and/or modify it under 
 
 BEGIN {
 
-    $File::Stata::DtaReader::VERSION = '0.3';
+    $File::Stata::DtaReader::VERSION = '0.31';
 
     # test for float endianness using little-endian 33 33 3b f3, which is a float code for 1.4
     my $testFloat = unpack( 'f', pack( 'h*', 'f33b3333' ) );
