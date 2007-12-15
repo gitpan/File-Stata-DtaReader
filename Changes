@@ -6,9 +6,13 @@ File::Stata::DtaReader - CPAN release history
 
 =over 8
 
+=item 0.32 (14 December 2007)
+
+Minor improvements to documentation.
+
 =item 0.31 (25 November 2007)
 
-Fix installation bug (remove Mac OS X resource forks from tar by export COPY_EXTENDED_ATTRIBUTES_DISABLE=1).
+Fix installation bug (remove Mac OS X resource forks from tar by exporting environment variable COPY_EXTENDED_ATTRIBUTES_DISABLE=1).
 
 =item 0.3 (24 November 2007)
 

@@ -6,6 +6,14 @@ package File::Stata::DtaReader;
 
 File::Stata::DtaReader - read Stata 8 and Stata 10 .dta files
 
+=head1 OVERVIEW
+
+This module reads Stata 8 and Stata 10 .dta files.
+
+The API is object oriented: create a new instance of File::Stata::DtaReader
+by providing a handle to the .dta file, and then use attributes and methods of that object
+to obtain the data.
+
 =head1 SYNOPSIS
 
 =over 8
@@ -30,7 +38,8 @@ as a perl undef.
 
 =head1 AUTHOR
 
-Written by Franck Latremoliere. Copyright (c) 2007 Reckon LLP.
+Written by Franck Latremoliere.
+Copyright (c) 2007 Reckon LLP.
 http://www.reckon.co.uk/staff/franck/
 
 =head1 LICENCE
@@ -42,14 +51,16 @@ This program is free software; you can use, redistribute and/or modify it under 
 
 BEGIN {
 
-    $File::Stata::DtaReader::VERSION = '0.31';
+    $File::Stata::DtaReader::VERSION = '0.32';
 
     # test for float endianness using little-endian 33 33 3b f3, which is a float code for 1.4
+
     my $testFloat = unpack( 'f', pack( 'h*', 'f33b3333' ) );
     $File::Stata::DtaReader::byteOrder = 1 if ( 2.0 * $testFloat > 2.7 && 2.0 * $testFloat < 2.9 );
     $testFloat = unpack( 'f', pack( 'h*', '33333bf3' ) );
     $File::Stata::DtaReader::byteOrder = 2 if ( 2.0 * $testFloat > 2.7 && 2.0 * $testFloat < 2.9 );
     warn "Unable to detect endianness of float storage" unless $File::Stata::DtaReader::byteOrder;
+
 }
 
 sub new($$) {
